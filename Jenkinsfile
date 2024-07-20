@@ -21,6 +21,12 @@ pipeline {
             }
         }
 
+        stage('Verify Terraform Installation') {
+            steps {
+                bat 'terraform -version'
+            }
+        }
+
         stage('Plan') {
             steps {
                 bat 'cd terraform && terraform init'
