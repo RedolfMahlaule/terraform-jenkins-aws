@@ -1,5 +1,5 @@
 #  Local .terraform directories
-**C:\Users\dell\teraform\*
+**.terraform*
 
 # .tfstate files
 *.tfstate
