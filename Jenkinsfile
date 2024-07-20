@@ -23,7 +23,7 @@ pipeline {
 
         stage('Verify Terraform Installation') {
             steps {
-                bat 'terraform -version'
+                bat 'terraform --version'
             }
         }
 
