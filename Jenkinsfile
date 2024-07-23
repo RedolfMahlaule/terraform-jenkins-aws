@@ -23,15 +23,15 @@ pipeline {
 
         stage('Verify Terraform Installation') {
             steps {
-                bat 'terraform --version'
+                sh 'terraform --version'
             }
         }
 
         stage('Plan') {
             steps {
-                bat 'cd terraform && terraform init'
-                bat 'cd terraform && terraform plan -out tfplan'
-                bat 'cd terraform && terraform show -no-color tfplan > tfplan.txt'
+                sh 'cd terraform && terraform init'
+                sh 'cd terraform && terraform plan -out tfplan'
+                sh 'cd terraform && terraform show -no-color tfplan > tfplan.txt'
             }
         }
 
@@ -52,7 +52,7 @@ pipeline {
 
         stage('Apply') {
             steps {
-                bat 'cd terraform && terraform apply -input=false tfplan'
+                sh 'cd terraform && terraform apply -input=false tfplan'
             }
         }
     }
